@@ -1,0 +1,11 @@
+@mixin grid ($columns, $gap){
+  display: grid;
+  grid-template-columns: $columns;
+  grid-gap: $gap;    
+}
+
+.counter-parent {
+  @include grid(repeat(4, 1fr), 2rem);
+  width: 80%;
+  margin: 2rem auto 0 auto;
+}

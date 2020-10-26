@@ -1,0 +1,11 @@
+$pure-black: #000;
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-top: 2px solid $pure-black;
+    text-align: center;
+}

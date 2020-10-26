@@ -1,0 +1,62 @@
+@mixin grid ($columns, $gap){
+    display: grid;
+    grid-template-columns: $columns;
+    grid-gap: $gap;    
+}
+
+$pure-black: #000;
+$pure-white: #fff;
+$just-gray: #ccc;
+
+.counter {
+    width: 100%;
+    border: 2px solid $pure-black;
+    box-sizing: border-box;
+    overflow: hidden;
+    &__counter-header {
+        width: 100%;
+        padding: .3rem 0 .3rem 1rem;
+        box-sizing: border-box;
+        border-bottom: 2px solid $pure-black;
+    }
+    &__count {
+        width: 100%;
+        text-align: center;
+        padding: 3rem 0;
+        box-sizing: border-box;
+        font-size: 2.5rem;
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    &__run-button-holder {
+        width: 100%;
+        text-align: center;
+        padding: 0 0 1rem 0;
+        box-sizing: border-box;
+    }
+    &__run-button {
+        width: 90%;
+        background-color: $pure-white;
+        border: 2px solid $pure-black;
+        padding: .3rem 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        &:hover {
+            background-color: $pure-black;
+            border-color: $pure-white;
+            color: $pure-white;
+        }
+        &:disabled {
+            border-color: $just-gray;
+            color: $just-gray;
+            cursor: not-allowed;
+            &:hover {
+                background-color: $pure-white;
+                border-color: $just-gray;
+                color: $just-gray;
+            }
+        }
+    }
+}

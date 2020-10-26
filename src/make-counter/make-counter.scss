@@ -1,0 +1,72 @@
+@mixin flex($justify, $align, $wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+$pure-black: #000;
+$pure-white: #fff;
+$just-gray: #ccc;
+
+@keyframes make-alert {
+    from {
+        transform: translateX(0);
+        font-weight: normal;
+    }
+    to {
+        transform: translateX(2rem);
+        font-weight: bold;
+    }
+}
+
+.make-counter-parent {
+    width: 80%;
+    margin: 10rem auto 0 auto;
+    border: 2px solid $pure-black;
+    padding: 1rem 0;
+    &__counter-maker-holder {
+        @include flex(center, center, nowrap);
+        width: 95%;
+        margin: 0 auto 1rem auto;
+    }
+    &__steps-input {
+        width: 75%;
+        border: 2px solid $pure-black;
+        padding: .3rem 0 .3rem 1rem;
+        margin-right: 1rem;
+        box-sizing: border-box;
+    }
+    &__maker-button {
+        width: calc(25% - 1rem);
+        padding: .3rem 0;
+        box-sizing: border-box;
+        background-color: $pure-black;
+        border: 2px solid $pure-black;
+        color: $pure-white;
+        cursor: pointer;
+        &:hover {
+            border-color: $pure-black;
+            background-color: $pure-white;
+            color: $pure-black;
+        }
+        &:disabled {
+            background-color: $pure-white;
+            border-color: $just-gray;
+            color: $just-gray;
+            cursor: not-allowed;
+            &:hover {
+                background-color: $pure-white;
+                border-color: $just-gray;
+                color: $just-gray;
+            }
+        }
+    }
+    &__message {
+        width: 95%;
+        margin: 0 auto;
+        &--active {
+            animation: make-alert 1s ease infinite;
+        }
+    }
+}
